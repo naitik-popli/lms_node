@@ -13,8 +13,11 @@ const globalErrHandler = (err, req, res, next) => {
 };
 // Not found
 const notFoundErr = (req, res, next) => {
-    const err = new Error(`Cannot find ${req.originalUrl} on the server`);
-    next(err);
-}
-
+    const error = new Error(`Cannot find ${req.originalUrl} on the server`);
+    res.status(404).json({
+      status: "failed",
+      message: error.message,
+      stack: error.stack
+    });
+  };
 module.exports = { globalErrHandler, notFoundErr};

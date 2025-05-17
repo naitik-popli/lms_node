@@ -42,5 +42,7 @@ app.use("/api/v1/exam-results", examResultRouter); // Question routes
  */
 app.use(notFoundErr);
 app.use(globalErrHandler);
-
+app.get("/", (req, res) => {
+    res.send("API is running");
+  });
 module.exports = app;
