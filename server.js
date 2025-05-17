@@ -2,8 +2,11 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
-const globalErrHandler = require("../middlewares/globalErrHandler");
+// const globalErrHandler = require("../middlewares/globalErrHandler");
 const userRoutes = require("../routes/userRoute"); // Adjust this path if needed
+const path = require('path');
+const globalErrHandler = require(path.resolve(__dirname, '../middlewares/globalErrHandler'));
+
 // other routes...
 
 // Middlewares
