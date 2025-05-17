@@ -3,7 +3,8 @@ const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
 // const globalErrHandler = require("../middlewares/globalErrHandler");
-const userRoutes = require("../routes/userRoute"); // Adjust this path if needed
+const userRoute = require('../routes/userRoute');
+const userRoutes = require(path.resolve(__dirname, '../routes/userRoute'));
 const path = require('path');
 const globalErrHandler = require(path.resolve(__dirname, '../middlewares/globalErrHandler'));
 
